@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "241480766012",
+    "project_id": "fitnessmobile-bf260",
+    "storage_bucket": "fitnessmobile-bf260.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241480766012:android:f7dd4e91dad701f03a6939",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCLAdrJi5JIczoumnqwDyCiOpMUxKdIQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

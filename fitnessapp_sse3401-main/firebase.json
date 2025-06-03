@@ -1,0 +1,28 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "fitnessmobile-bf260",
+          "appId": "1:241480766012:android:f7dd4e91dad701f03a6939",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "fitnessmobile-bf260",
+          "configurations": {
+            "android": "1:241480766012:android:f7dd4e91dad701f03a6939",
+            "ios": "1:241480766012:ios:9f0cc44b9e322d913a6939",
+            "macos": "1:241480766012:ios:9f0cc44b9e322d913a6939",
+            "web": "1:241480766012:web:c88adeb0c2e206443a6939",
+            "windows": "1:241480766012:web:cc0d39966910492e3a6939"
+          }
+        }
+      }
+    }
+  },
+  "storage": {
+    "rules": "firebase.json"
+  }
+}
