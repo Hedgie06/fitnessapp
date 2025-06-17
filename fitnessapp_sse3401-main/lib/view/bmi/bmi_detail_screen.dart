@@ -68,7 +68,7 @@ class _BMIDetailScreenState extends State<BMIDetailScreen> {
     if (bmi < 18.5) {
       return {
         "risk": "Higher risk for: Nutritional deficiencies, osteoporosis, weakened immune system",
-        "advice": "Increase caloric intake with nutrient-rich foods, consult a nutritionist, consider strength training"
+        "advice": "Increase calorie intake with nutrient-rich foods, consult a nutritionist, consider strength training"
       };
     } else if (bmi < 25) {
       return {
