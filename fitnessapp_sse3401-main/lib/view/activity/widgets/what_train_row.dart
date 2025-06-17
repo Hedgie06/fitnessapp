@@ -50,13 +50,6 @@ class WhatTrainRow extends StatelessWidget {
                     const SizedBox(
                       height: 15,
                     ),
-                    SizedBox(
-                      width: 100,
-                      height: 30,
-                      child: RoundButton(
-                          title: "View More",
-                          onPressed: () {}),
-                    )
                   ],
                 ),
               ),
