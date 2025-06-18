@@ -405,157 +405,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                SizedBox(height: media.width * 0.02),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(25),
-                  child: Container(
-                    height: media.width * 0.4,
-                    width: media.width,
-                    decoration: BoxDecoration(
-                        color: AppColors.primaryColor2.withOpacity(0.3),
-                        borderRadius: BorderRadius.circular(25)),
-                    child: Stack(
-                      alignment: Alignment.topLeft,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 20, horizontal: 20),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Heart Rate",
-                                style: TextStyle(
-                                    color: AppColors.blackColor,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                              SizedBox(height: media.width * 0.01),
-                              ShaderMask(
-                                blendMode: BlendMode.srcIn,
-                                shaderCallback: (bounds) {
-                                  return LinearGradient(
-                                          colors: AppColors.primaryG,
-                                          begin: Alignment.centerLeft,
-                                          end: Alignment.centerRight)
-                                      .createShader(Rect.fromLTRB(
-                                          0, 0, bounds.width, bounds.height));
-                                },
-                                child: Text(
-                                  "78 BPM",
-                                  style: TextStyle(
-                                    color: AppColors.blackColor,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                        LineChart(
-                          LineChartData(
-                            showingTooltipIndicators:
-                                showingTooltipOnSpots.map((index) {
-                              return ShowingTooltipIndicators([
-                                LineBarSpot(
-                                  tooltipsOnBar,
-                                  lineBarsData.indexOf(tooltipsOnBar),
-                                  tooltipsOnBar.spots[index],
-                                ),
-                              ]);
-                            }).toList(),
-                            lineTouchData: LineTouchData(
-                              enabled: true,
-                              handleBuiltInTouches: false,
-                              touchCallback: (FlTouchEvent event,
-                                  LineTouchResponse? response) {
-                                if (response == null ||
-                                    response.lineBarSpots == null) {
-                                  return;
-                                }
-                                if (event is FlTapUpEvent) {
-                                  final spotIndex =
-                                      response.lineBarSpots!.first.spotIndex;
-                                  showingTooltipOnSpots.clear();
-                                  setState(() {
-                                    showingTooltipOnSpots.add(spotIndex);
-
-                                    // if (showingTooltipOnSpots
-                                    //     .contains(spotIndex)) {
-                                    //   showingTooltipOnSpots.remove(spotIndex);
-                                    // } else {
-                                    //   showingTooltipOnSpots.add(spotIndex);
-                                    // }
-                                  });
-                                }
-                              },
-                              mouseCursorResolver: (FlTouchEvent event,
-                                  LineTouchResponse? response) {
-                                if (response == null ||
-                                    response.lineBarSpots == null) {
-                                  return SystemMouseCursors.basic;
-                                }
-                                return SystemMouseCursors.click;
-                              },
-                              getTouchedSpotIndicator:
-                                  (LineChartBarData barData,
-                                      List<int> spotIndexes) {
-                                return spotIndexes.map((index) {
-                                  return TouchedSpotIndicatorData(
-                                    FlLine(
-                                      color: Colors.transparent,
-                                    ),
-                                    FlDotData(
-                                      show: true,
-                                      getDotPainter:
-                                          (spot, percent, barData, index) =>
-                                              FlDotCirclePainter(
-                                        radius: 3,
-                                        color: Colors.white,
-                                        strokeWidth: 2,
-                                        strokeColor: AppColors.secondaryColor2,
-                                      ),
-                                    ),
-                                  );
-                                }).toList();
-                              },
-                              touchTooltipData: LineTouchTooltipData(
-                                tooltipBgColor: AppColors.secondaryColor1,
-                                tooltipRoundedRadius: 20,
-                                getTooltipItems:
-                                    (List<LineBarSpot> lineBarsSpot) {
-                                  return lineBarsSpot.map((lineBarSpot) {
-                                    return LineTooltipItem(
-                                      //lineBarSpot.y.toString(),
-                                      "${lineBarSpot.x.toInt()} mins ago",
-                                      const TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 10,
-                                          fontWeight: FontWeight.w400),
-                                    );
-                                  }).toList();
-                                },
-                              ),
-                            ),
-                            lineBarsData: lineBarsData,
-                            minY: 0,
-                            maxY: 130,
-                            titlesData: FlTitlesData(show: false),
-                            gridData: FlGridData(show: false),
-                            borderData: FlBorderData(
-                              show: true,
-                              border: Border.all(
-                                color: Colors.transparent,
-                              ),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
                 SizedBox(height: media.width * 0.05),
                 Row(
                   children: [
@@ -625,62 +474,84 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     )),
-                    SizedBox(width: media.width * 0.05),
-                    Expanded(
-                        child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Container(
-                          width: double.maxFinite,
-                          height: media.width * 0.45,
-                          padding: EdgeInsets.symmetric(
-                              vertical: 25, horizontal: 20),
-                          decoration: BoxDecoration(
-                              color: AppColors.whiteColor,
-                              borderRadius: BorderRadius.circular(20),
-                              boxShadow: [
-                                BoxShadow(color: Colors.black12, blurRadius: 2)
-                              ]),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Sleep",
-                                style: TextStyle(
-                                    color: AppColors.blackColor,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(height: media.width * 0.01),
-                              ShaderMask(
-                                blendMode: BlendMode.srcIn,
-                                shaderCallback: (bounds) {
-                                  return LinearGradient(
-                                          colors: AppColors.primaryG,
-                                          begin: Alignment.centerLeft,
-                                          end: Alignment.centerRight)
-                                      .createShader(Rect.fromLTRB(
-                                          0, 0, bounds.width, bounds.height));
-                                },
-                                child: Text(
-                                  "8h 20m",
-                                  style: TextStyle(
-                                    color: AppColors.blackColor,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ),
-                              Expanded(
-                                  child: Image.asset(
-                                "assets/images/sleep_graph.png",
-                                width: double.maxFinite,
-                                fit: BoxFit.fitWidth,
-                              ))
+SizedBox(width: media.width * 0.05),
+Expanded(
+  child: Column(
+    mainAxisAlignment: MainAxisAlignment.start,
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      Container(
+        width: double.maxFinite,
+        height: media.width * 0.55,
+        padding: EdgeInsets.symmetric(vertical: 25, horizontal: 20),
+        decoration: BoxDecoration(
+          color: AppColors.whiteColor,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(color: Colors.black12, blurRadius: 2),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Sleep",
+              style: TextStyle(
+                color: AppColors.blackColor,
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: media.width * 0.01),
+            ShaderMask(
+              blendMode: BlendMode.srcIn,
+              shaderCallback: (bounds) {
+                return LinearGradient(
+                  colors: AppColors.primaryG,
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                ).createShader(Rect.fromLTRB(0, 0, bounds.width, bounds.height));
+              },
+              child: Text(
+                "8h 20m",
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            SizedBox(height: 12),
+            Text(
+              "Recommended Sleep (by Age):",
+              style: TextStyle(
+                color: AppColors.blackColor,
+                fontSize: 12,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 6),
+            Text(
+              "• Children (6–13): 9–11 hours\n"
+              "• Teens (14–17): 8–10 hours\n"
+              "• Adults (18–64): 7–9 hours\n"
+              "• Older Adults (65+): 7–8 hours",
+              style: TextStyle(
+                color: AppColors.blackColor,
+                fontSize: 12,
+              ),
+            ),
+            SizedBox(height: 10),
+            Text(
+              "Did you know?\nLack of sleep affects mood, memory,\nand immune system.",
+              style: TextStyle(
+                color: Colors.grey,
+                fontSize: 11,
+                fontStyle: FontStyle.italic,
+               ))
                             ],
                           ),
                         ),
+
                         SizedBox(height: media.width * 0.05),
                         Container(
                           width: double.maxFinite,
