@@ -623,160 +623,149 @@ class _ActivityTrackerScreenState extends State<ActivityTrackerScreen> {
                   ],
                 ),
               ),
-              SizedBox(
-                height: media.width * 0.1,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    "Activity Progress",
-                    style: TextStyle(
-                      color: AppColors.blackColor,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Container(
-                    height: 35,
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(colors: AppColors.primaryG),
-                        borderRadius: BorderRadius.circular(15)),
-                    child: DropdownButtonHideUnderline(
-                      child: DropdownButton(
-                        items: ["Weekly", "Monthly"]
-                            .map((name) => DropdownMenuItem(
-                            value: name,
-                            child: Text(
-                              name,
-                              style: const TextStyle(
-                                  color: AppColors.blackColor,
-                                  fontSize: 14),
-                            )))
-                            .toList(),
-                        onChanged: (value) {},
-                        icon: const Icon(Icons.expand_more,
-                            color: AppColors.whiteColor),
-                        hint: const Text("Weekly",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: AppColors.whiteColor, fontSize: 12)),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-              SizedBox(
-                height: media.width * 0.05,
-              ),
-              Container(
-                height: media.width * 0.5,
-                padding: const EdgeInsets.symmetric(vertical: 15 , horizontal: 0),
-                decoration: BoxDecoration(
-                    color: AppColors.whiteColor,
-                    borderRadius: BorderRadius.circular(15),
-                    boxShadow: const [
-                      BoxShadow(color: Colors.black12, blurRadius: 3)
-                    ]),
-                child: BarChart(
+SizedBox(height: media.width * 0.1),
 
-                    BarChartData(
-                      barTouchData: BarTouchData(
-                        touchTooltipData: BarTouchTooltipData(
-                          tooltipBgColor: Colors.grey,
-                          tooltipHorizontalAlignment: FLHorizontalAlignment.right,
-                          tooltipMargin: 10,
-                          getTooltipItem: (group, groupIndex, rod, rodIndex) {
-                            String weekDay;
-                            switch (group.x) {
-                              case 0:
-                                weekDay = 'Sunday';
-                                break;
-                              case 1:
-                                weekDay = 'Monday';
-                                break;
-                              case 2:
-                                weekDay = 'Tuesday';
-                                break;
-                              case 3:
-                                weekDay = 'Wednesday';
-                                break;
-                              case 4:
-                                weekDay = 'Thursday';
-                                break;
-                              case 5:
-                                weekDay = 'Friday';
-                                break;
-                              case 6:
-                                weekDay = 'Saturday';
-                                break;
-                              default:
-                                throw Error();
-                            }
-                            return BarTooltipItem(
-                              '$weekDay\n',
-                              const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14,
-                              ),
-                              children: <TextSpan>[
-                                TextSpan(
-                                  text: (rod.toY - 1).toString(),
-                                  style: const TextStyle(
-                                    color: AppColors.whiteColor,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ],
-                            );
-                          },
-                        ),
-                        touchCallback: (FlTouchEvent event, barTouchResponse) {
-                          setState(() {
-                            if (!event.isInterestedForInteractions ||
-                                barTouchResponse == null ||
-                                barTouchResponse.spot == null) {
-                              touchedIndex = -1;
-                              return;
-                            }
-                            touchedIndex =
-                                barTouchResponse.spot!.touchedBarGroupIndex;
-                          });
-                        },
-                      ),
-                      titlesData: FlTitlesData(
-                        show: true,
-                        rightTitles:  AxisTitles(
-                          sideTitles: SideTitles(showTitles: false),
-                        ),
-                        topTitles:  AxisTitles(
-                          sideTitles: SideTitles(showTitles: false),
-                        ),
-                        bottomTitles: AxisTitles(
-                          sideTitles: SideTitles(
-                            showTitles: true,
-                            getTitlesWidget: getTitles,
-                            reservedSize: 38,
-                          ),
-                        ),
-                        leftTitles:  AxisTitles(
-                          sideTitles: SideTitles(
-                            showTitles: false,
-                          ),
-                        ),
-                      ),
-                      borderData: FlBorderData(
-                        show: false,
-                      ),
-                      barGroups: showingGroups(),
-                      gridData:  FlGridData(show: false),
-                    )
+const Text(
+  "Target Suggestions",
+  style: TextStyle(
+    color: AppColors.blackColor,
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+  ),
+),
 
-                ),
+SizedBox(height: media.width * 0.05),
+
+Container(
+  width: double.infinity,
+  padding: const EdgeInsets.all(16),
+  decoration: BoxDecoration(
+    color: AppColors.whiteColor,
+    borderRadius: BorderRadius.circular(15),
+    boxShadow: const [
+      BoxShadow(color: Colors.black12, blurRadius: 3),
+    ],
+  ),
+  child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      const Text(
+        "Daily Recommendations (by Age)",
+        style: TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.bold,
+          color: AppColors.blackColor,
+        ),
+      ),
+      const SizedBox(height: 12),
+      Table(
+        columnWidths: const {
+          0: FlexColumnWidth(2),
+          1: FlexColumnWidth(2),
+          2: FlexColumnWidth(2),
+          3: FlexColumnWidth(2),
+        },
+        border: TableBorder.all(color: Colors.black12),
+        children: const [
+          TableRow(
+            decoration: BoxDecoration(color: Color(0xFFF6F6F6)),
+            children: [
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text("Age Group", style: TextStyle(fontWeight: FontWeight.bold)),
               ),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text("Water (L)", style: TextStyle(fontWeight: FontWeight.bold)),
+              ),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text("Steps", style: TextStyle(fontWeight: FontWeight.bold)),
+              ),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text("Kcal", style: TextStyle(fontWeight: FontWeight.bold)),
+              ),
+            ],
+          ),
+          TableRow(children: [
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text("Children (6–12)"),
+            ),
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text("1.6 – 2.1"),
+            ),
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text("8,000 – 10,000"),
+            ),
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text("1,600 – 2,000"),
+            ),
+          ]),
+          TableRow(children: [
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text("Teens (13–18)"),
+            ),
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text("2.0 – 2.5"),
+            ),
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text("10,000 – 12,000"),
+            ),
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text("2,200 – 2,800"),
+            ),
+          ]),
+          TableRow(children: [
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text("Adults (19–64)"),
+            ),
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text("2.5 – 3.7"),
+            ),
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text("7,000 – 10,000"),
+            ),
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text("2,000 – 2,600"),
+            ),
+          ]),
+          TableRow(children: [
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text("Seniors (65+)"),
+            ),
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text("2.0 – 2.5"),
+            ),
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text("5,000 – 7,000"),
+            ),
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text("1,800 – 2,200"),
+            ),
+          ]),
+        ],
+      ),
+    ],
+  ),
+),
+
               SizedBox(
                 height: media.width * 0.05,
               ),

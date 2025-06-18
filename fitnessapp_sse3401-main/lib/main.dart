@@ -16,6 +16,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'services/connectivity_service.dart';
 import 'widgets/no_internet_widget.dart';
 
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
