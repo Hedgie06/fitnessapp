@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitnessapp/view/profile/personal_data_screen.dart';
-import 'package:fitnessapp/view/achievement/achievement_screen.dart';
 import '../../common_widgets/round_button.dart';
 import 'package:fitnessapp/view/profile/contact_us_screen.dart';
 import 'package:fitnessapp/view/profile/privacy_policy_screen.dart';
@@ -136,7 +135,6 @@ class _UserProfileState extends State<UserProfile> {
       "name": "Personal Data",
       "tag": "1"
     },
-    {"image": "assets/icons/p_achi.png", "name": "Achievement", "tag": "2"},
     {
       "icon": Icons.star,
       "name": "Chat with FitQuest AI",
@@ -174,13 +172,7 @@ class _UserProfileState extends State<UserProfile> {
           ),
         );
         break;
-      case "2": // Achievement
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const AchievementScreen(),
-          ),
-        );
+      
         break;
       case "3": // Chat with Gemini
         _showGeminiChat();
