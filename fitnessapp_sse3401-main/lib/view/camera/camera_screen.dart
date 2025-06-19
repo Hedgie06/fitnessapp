@@ -301,7 +301,7 @@ class _CameraScreenState extends State<CameraScreen> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
+                /*Padding(
                   padding:
                   const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                   child: Container(
@@ -361,7 +361,7 @@ class _CameraScreenState extends State<CameraScreen> {
                       ],
                     ),
                   ),
-                ),
+                ),*/
                 Padding(
                   padding:
                   const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
@@ -447,7 +447,7 @@ class _CameraScreenState extends State<CameraScreen> {
                     ],
                   ),
                 ),
-                Padding(
+                /*Padding(
                   padding:
                   const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                   child: Row(
@@ -462,8 +462,8 @@ class _CameraScreenState extends State<CameraScreen> {
                       ),
                     ],
                   ),
-                ),
-                ListView.builder(
+                ),*/
+                /*ListView.builder(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
@@ -527,7 +527,7 @@ class _CameraScreenState extends State<CameraScreen> {
                           ),
                         ],
                       );
-                    }))
+                    }))*/
               ],
             ),
             SizedBox(
