@@ -47,12 +47,6 @@ class _WorkoutDetailViewState extends State<WorkoutDetailView> {
     }
   }
 
-  List youArr = [
-    {"image": "assets/icons/barbell.png", "title": "Barbell"},
-    {"image": "assets/icons/skipping_rope.png", "title": "Skipping Rope"},
-    {"image": "assets/icons/bottle.png", "title": "Bottle 1 Liters"},
-  ];
-
   List exercisesArr = [
     {
       "name": "Set 1",
@@ -224,72 +218,6 @@ class _WorkoutDetailViewState extends State<WorkoutDetailView> {
                             ),
                           ),
                         ],
-                      ),
-                      SizedBox(
-                        height: media.width * 0.05,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "You'll Need",
-                            style: TextStyle(
-                                color: AppColors.blackColor,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700),
-                          ),
-                          TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              "${youArr.length} Items",
-                              style:
-                              TextStyle(color: AppColors.grayColor, fontSize: 12),
-                            ),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: media.width * 0.5,
-                        child: ListView.builder(
-                            padding: EdgeInsets.zero,
-                            scrollDirection: Axis.horizontal,
-                            shrinkWrap: true,
-                            itemCount: youArr.length,
-                            itemBuilder: (context, index) {
-                              var yObj = youArr[index] as Map? ?? {};
-                              return Container(
-                                  margin: const EdgeInsets.all(8),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                    CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        height: media.width * 0.35,
-                                        width: media.width * 0.35,
-                                        decoration: BoxDecoration(
-                                            color: AppColors.lightGrayColor,
-                                            borderRadius:
-                                            BorderRadius.circular(15)),
-                                        alignment: Alignment.center,
-                                        child: Image.asset(
-                                          yObj["image"].toString(),
-                                          width: media.width * 0.2,
-                                          height: media.width * 0.2,
-                                          fit: BoxFit.contain,
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Text(
-                                          yObj["title"].toString(),
-                                          style: TextStyle(
-                                              color: AppColors.blackColor,
-                                              fontSize: 12),
-                                        ),
-                                      )
-                                    ],
-                                  ));
-                            }),
                       ),
                       SizedBox(
                         height: media.width * 0.05,
