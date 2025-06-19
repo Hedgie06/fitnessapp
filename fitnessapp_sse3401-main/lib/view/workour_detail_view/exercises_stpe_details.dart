@@ -212,64 +212,6 @@ class _ExercisesStepDetailsState extends State<ExercisesStepDetails> {
                   );
                 }),
               ),
-              Text(
-                "Custom Repetitions",
-                style: TextStyle(
-                    color: AppColors.blackColor,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700),
-              ),
-              SizedBox(
-                height: 150,
-                child: CupertinoPicker.builder(
-                  itemExtent: 40,
-                  selectionOverlay: Container(
-                    width: double.maxFinite,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      border: Border(
-                        top: BorderSide(color: AppColors.grayColor.withOpacity(0.2), width: 1),
-                        bottom: BorderSide(
-                            color: AppColors.grayColor.withOpacity(0.2), width: 1),
-                      ),
-                    ),
-                  ),
-                  onSelectedItemChanged: (index) {},
-                  childCount: 60,
-                  itemBuilder: (context, index) {
-                    return Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          "assets/icons/burn_icon.png",
-                          width: 15,
-                          height: 15,
-                          fit: BoxFit.contain,
-                        ),
-                        Text(
-                          " ${(index + 1) * 15} Calories Burn",
-                          style: TextStyle(color: AppColors.grayColor, fontSize: 10),
-                        ),
-                        Text(
-                          " ${index + 1} ",
-                          style: TextStyle(
-                              color: AppColors.grayColor,
-                              fontSize: 24,
-                              fontWeight: FontWeight.w500),
-                        ),
-                        Text(
-                          " times",
-                          style: TextStyle(color: AppColors.grayColor, fontSize: 16),
-                        )
-                      ],
-                    );
-                  },
-                ),
-              ),
-              RoundGradientButton(title: "Save", onPressed: () {}),
-              const SizedBox(
-                height: 15,
-              ),
             ],
           ),
         ),
