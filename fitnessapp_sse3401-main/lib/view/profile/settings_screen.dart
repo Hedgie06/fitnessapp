@@ -41,111 +41,143 @@ class _SettingsScreenState extends State<SettingsScreen> {
     await prefs.setString('language', selectedLanguage);
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+ @override
+Widget build(BuildContext context) {
+  return Scaffold(
+    backgroundColor: AppColors.whiteColor,
+    appBar: AppBar(
       backgroundColor: AppColors.whiteColor,
-      appBar: AppBar(
-        backgroundColor: AppColors.whiteColor,
-        elevation: 0,
-        title: const Text(
-          "Settings",
-          style: TextStyle(
-            color: AppColors.blackColor,
-            fontSize: 16,
-            fontWeight: FontWeight.w700,
+      elevation: 0,
+      title: const Text(
+        "Settings",
+        style: TextStyle(
+          color: AppColors.blackColor,
+          fontSize: 16,
+          fontWeight: FontWeight.w700,
+        ),
+      ),
+      leading: IconButton(
+        icon: const Icon(Icons.arrow_back, color: AppColors.blackColor),
+        onPressed: () => Navigator.pop(context),
+      ),
+    ),
+    body: SingleChildScrollView(
+      padding: const EdgeInsets.all(20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _buildSection(
+            title: "General",
+            children: [
+              _buildSwitchTile(
+                title: "Use Metric System",
+                subtitle: "Switch between metric and imperial units",
+                value: useMetricSystem,
+                onChanged: (value) {
+                  setState(() {
+                    useMetricSystem = value;
+                    _saveSettings();
+                  });
+                },
+              ),
+              _buildDivider(),
+            ],
           ),
-        ),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: AppColors.blackColor),
-          onPressed: () => Navigator.pop(context),
+
+          const SizedBox(height: 20),
+
+          _buildSection(
+            title: "App Settings",
+            children: [
+              _buildDivider(),
+              _buildLanguageSelector(),
+            ],
+          ),
+
+          const SizedBox(height: 20),
+
+          _buildSection(
+            title: "Storage",
+            children: [
+              ListTile(
+                title: const Text("Clear Cache"),
+                subtitle: const Text("Free up space by clearing cached data"),
+                trailing: TextButton(
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                        title: const Text("Clear Cache"),
+                        content: const Text("Are you sure you want to clear the cache?"),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: const Text("Cancel"),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(content: Text("Cache cleared")),
+                              );
+                            },
+                            child: const Text("Clear"),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                  child: const Text("CLEAR"),
+                ),
+              ),
+            ],
+          ),
+
+          const SizedBox(height: 20),
+
+          _buildSection(
+            title: "FAQ",
+            children: [
+              _buildFAQItem(
+                "What does the app track?",
+                "The app tracks your daily activity including steps, calories burned, water intake, and sleep duration.",
+              ),
+              _buildDivider(),
+              _buildFAQItem(
+                "Can I use the app without an internet connection?",
+                "Yes, you can use the basic features offline. However, syncing and cloud backup require an internet connection.",
+              ),
+            ],
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+Widget _buildFAQItem(String question, String answer) {
+  return ExpansionTile(
+    tilePadding: EdgeInsets.zero,
+    childrenPadding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+    title: Text(
+      question,
+      style: const TextStyle(
+        fontSize: 14,
+        fontWeight: FontWeight.w600,
+        color: AppColors.blackColor,
+      ),
+    ),
+    children: [
+      Text(
+        answer,
+        style: const TextStyle(
+          fontSize: 14,
+          color: Colors.black87,
         ),
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _buildSection(
-              title: "General",
-              children: [
-                _buildSwitchTile(
-                  title: "Use Metric System",
-                  subtitle: "Switch between metric and imperial units",
-                  value: useMetricSystem,
-                  onChanged: (value) {
-                    setState(() {
-                      useMetricSystem = value;
-                      _saveSettings();
-                    });
-                  },
-                ),
-                _buildDivider(),
-              ],
-            ),
-            const SizedBox(height: 20),
-            _buildSection(
-              title: "App Settings",
-              children: [
-                _buildSwitchTile(
-                  title: "Auto-download Workouts",
-                  subtitle: "Download workout content automatically",
-                  value: autoDownload,
-                  onChanged: (value) {
-                    setState(() {
-                      autoDownload = value;
-                      _saveSettings();
-                    });
-                  },
-                ),
-                _buildDivider(),
-                _buildLanguageSelector(),
-              ],
-            ),
-            const SizedBox(height: 20),
-            _buildSection(
-              title: "Storage",
-              children: [
-                ListTile(
-                  title: const Text("Clear Cache"),
-                  subtitle: const Text("Free up space by clearing cached data"),
-                  trailing: TextButton(
-                    onPressed: () {
-                      // Show confirmation dialog
-                      showDialog(
-                        context: context,
-                        builder: (context) => AlertDialog(
-                          title: const Text("Clear Cache"),
-                          content: const Text("Are you sure you want to clear the cache?"),
-                          actions: [
-                            TextButton(
-                              onPressed: () => Navigator.pop(context),
-                              child: const Text("Cancel"),
-                            ),
-                            TextButton(
-                              onPressed: () {
-                                // Implement cache clearing logic
-                                Navigator.pop(context);
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(content: Text("Cache cleared")),
-                                );
-                              },
-                              child: const Text("Clear"),
-                            ),
-                          ],
-                        ),
-                      );
-                    },
-                    child: const Text("CLEAR"),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+    ],
+  );
+}
 
   Widget _buildSection({required String title, required List<Widget> children}) {
     return Container(
@@ -217,9 +249,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 "English",
-                "Spanish",
-                "French",
-                "German"
               ].map((language) => ListTile(
                 title: Text(language),
                 onTap: () {
