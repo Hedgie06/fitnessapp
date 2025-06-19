@@ -9,9 +9,9 @@ import 'package:simple_animation_progress_bar/simple_animation_progress_bar.dart
 import 'package:simple_circular_progress_bar/simple_circular_progress_bar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fitnessapp/view/bmi/bmi_detail_screen.dart';  // Add this import
+import 'package:fitnessapp/view/bmi/bmi_detail_screen.dart'; // Add this import
 import '../../controller/fitness_controller.dart';
-import 'package:fitnessapp/controller/consumption_controller.dart';  // Add this import
+import 'package:fitnessapp/controller/consumption_controller.dart'; // Add this import
 
 import '../../common_widgets/round_button.dart';
 import '../../common_widgets/round_gradient_button.dart';
@@ -110,53 +110,53 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   List<LineChartBarData> get lineBarsData1 => [
-    lineChartBarData1_1,
-    lineChartBarData1_2,
-  ];
+        lineChartBarData1_1,
+        lineChartBarData1_2,
+      ];
 
   LineChartBarData get lineChartBarData1_1 => LineChartBarData(
-    isCurved: true,
-    gradient: LinearGradient(colors: [
-      AppColors.primaryColor2.withOpacity(0.5),
-      AppColors.primaryColor1.withOpacity(0.5),
-    ]),
-    barWidth: 4,
-    isStrokeCapRound: true,
-    dotData: FlDotData(show: false),
-    belowBarData: BarAreaData(show: false),
-    spots: const [
-      FlSpot(1, 35),
-      FlSpot(2, 70),
-      FlSpot(3, 40),
-      FlSpot(4, 80),
-      FlSpot(5, 25),
-      FlSpot(6, 70),
-      FlSpot(7, 35),
-    ],
-  );
+        isCurved: true,
+        gradient: LinearGradient(colors: [
+          AppColors.primaryColor2.withOpacity(0.5),
+          AppColors.primaryColor1.withOpacity(0.5),
+        ]),
+        barWidth: 4,
+        isStrokeCapRound: true,
+        dotData: FlDotData(show: false),
+        belowBarData: BarAreaData(show: false),
+        spots: const [
+          FlSpot(1, 35),
+          FlSpot(2, 70),
+          FlSpot(3, 40),
+          FlSpot(4, 80),
+          FlSpot(5, 25),
+          FlSpot(6, 70),
+          FlSpot(7, 35),
+        ],
+      );
 
   LineChartBarData get lineChartBarData1_2 => LineChartBarData(
-    isCurved: true,
-    gradient: LinearGradient(colors: [
-      AppColors.secondaryColor2.withOpacity(0.5),
-      AppColors.secondaryColor1.withOpacity(0.5),
-    ]),
-    barWidth: 2,
-    isStrokeCapRound: true,
-    dotData: FlDotData(show: false),
-    belowBarData: BarAreaData(
-      show: false,
-    ),
-    spots: const [
-      FlSpot(1, 80),
-      FlSpot(2, 50),
-      FlSpot(3, 90),
-      FlSpot(4, 40),
-      FlSpot(5, 80),
-      FlSpot(6, 35),
-      FlSpot(7, 60),
-    ],
-  );
+        isCurved: true,
+        gradient: LinearGradient(colors: [
+          AppColors.secondaryColor2.withOpacity(0.5),
+          AppColors.secondaryColor1.withOpacity(0.5),
+        ]),
+        barWidth: 2,
+        isStrokeCapRound: true,
+        dotData: FlDotData(show: false),
+        belowBarData: BarAreaData(
+          show: false,
+        ),
+        spots: const [
+          FlSpot(1, 80),
+          FlSpot(2, 50),
+          FlSpot(3, 90),
+          FlSpot(4, 40),
+          FlSpot(5, 80),
+          FlSpot(6, 35),
+          FlSpot(7, 60),
+        ],
+      );
 
   @override
   void initState() {
@@ -181,7 +181,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _loadUserData() async {
     try {
-      final bmiData = await _fitnessController.getUserBMIData(); // Updated method name
+      final bmiData =
+          await _fitnessController.getUserBMIData(); // Updated method name
       setState(() {
         userBMI = bmiData['bmi'];
         bmiStatus = bmiData['status'];
@@ -237,7 +238,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
     final tooltipsOnBar = lineBarsData[0];
 
-
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
       body: SafeArea(
@@ -273,7 +273,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     IconButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, NotificationScreen.routeName);
+                          Navigator.pushNamed(
+                              context, NotificationScreen.routeName);
                         },
                         icon: Image.asset(
                           "assets/icons/notification_icon.png",
@@ -299,13 +300,15 @@ class _HomeScreenState extends State<HomeScreen> {
                         fit: BoxFit.fitHeight,
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20), // Reduced padding
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 15, horizontal: 20), // Reduced padding
                         child: Row(
                           mainAxisSize: MainAxisSize.max, // Added this
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Expanded( // Added Expanded
+                            Expanded(
+                              // Added Expanded
                               flex: 3, // Give more space to text
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -322,7 +325,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     "You have a $bmiStatus weight",
                                     style: TextStyle(
                                       color:
-                                      AppColors.whiteColor.withOpacity(0.7),
+                                          AppColors.whiteColor.withOpacity(0.7),
                                       fontSize: 12,
                                       fontFamily: "Poppins",
                                       fontWeight: FontWeight.w400,
@@ -332,15 +335,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                   SizedBox(
                                     height: 35,
                                     child: RoundButton(
-                                        title: "View More", onPressed: () {
-                                      Navigator.pushNamed(context, BMIDetailScreen.routeName);
-                                    }),
+                                        title: "View More",
+                                        onPressed: () {
+                                          Navigator.pushNamed(context,
+                                              BMIDetailScreen.routeName);
+                                        }),
                                   )
                                 ],
                               ),
                             ),
                             SizedBox(width: 10), // Added spacing
-                            SizedBox( // Constrain pie chart size
+                            SizedBox(
+                              // Constrain pie chart size
                               width: media.width * 0.3, // Increased from 0.25
                               height: media.width * 0.3, // Increased from 0.25
                               child: PieChart(
@@ -387,9 +393,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: 30,
                         child: RoundButton(
                           title: "check",
-                          type: RoundButtonType.bgGradient,  // Changed from primaryBG
+                          type: RoundButtonType
+                              .bgGradient, // Changed from primaryBG
                           onPressed: () {
-                            Navigator.pushNamed(context, ActivityTrackerScreen.routeName);
+                            Navigator.pushNamed(
+                                context, ActivityTrackerScreen.routeName);
                           },
                         ),
                       )
@@ -474,84 +482,77 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     )),
-SizedBox(width: media.width * 0.05),
-Expanded(
-  child: Column(
-    mainAxisAlignment: MainAxisAlignment.start,
-    mainAxisSize: MainAxisSize.min,
-    children: [
-      Container(
-        width: double.maxFinite,
-        height: media.width * 0.55,
-        padding: EdgeInsets.symmetric(vertical: 25, horizontal: 20),
-        decoration: BoxDecoration(
-          color: AppColors.whiteColor,
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(color: Colors.black12, blurRadius: 2),
-          ],
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Sleep",
-              style: TextStyle(
-                color: AppColors.blackColor,
-                fontSize: 12,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: media.width * 0.01),
-            ShaderMask(
-              blendMode: BlendMode.srcIn,
-              shaderCallback: (bounds) {
-                return LinearGradient(
-                  colors: AppColors.primaryG,
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                ).createShader(Rect.fromLTRB(0, 0, bounds.width, bounds.height));
-              },
-              child: Text(
-                "8h 20m",
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-            SizedBox(height: 12),
-            Text(
-              "Recommended Sleep (by Age):",
-              style: TextStyle(
-                color: AppColors.blackColor,
-                fontSize: 12,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 6),
-            Text(
-              "• Children (6–13): 9–11 hours\n"
-              "• Teens (14–17): 8–10 hours\n"
-              "• Adults (18–64): 7–9 hours\n"
-              "• Older Adults (65+): 7–8 hours",
-              style: TextStyle(
-                color: AppColors.blackColor,
-                fontSize: 12,
-              ),
-            ),
-            SizedBox(height: 10),
-            Text(
-              "Did you know?\nLack of sleep affects mood, memory,\nand immune system.",
-              style: TextStyle(
-                color: Colors.grey,
-                fontSize: 11,
-                fontStyle: FontStyle.italic,
-               ))
+                    SizedBox(width: media.width * 0.05),
+                    Expanded(
+                        child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Container(
+                          width: double.maxFinite,
+                          height: media.width * 0.55,
+                          padding: EdgeInsets.symmetric(
+                              vertical: 25, horizontal: 20),
+                          decoration: BoxDecoration(
+                            color: AppColors.whiteColor,
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(color: Colors.black12, blurRadius: 2),
+                            ],
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Sleep",
+                                style: TextStyle(
+                                  color: AppColors.blackColor,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              SizedBox(height: media.width * 0.01),
+                              ShaderMask(
+                                blendMode: BlendMode.srcIn,
+                                shaderCallback: (bounds) {
+                                  return LinearGradient(
+                                    colors: AppColors.primaryG,
+                                    begin: Alignment.centerLeft,
+                                    end: Alignment.centerRight,
+                                  ).createShader(Rect.fromLTRB(
+                                      0, 0, bounds.width, bounds.height));
+                                },
+                                child: Text(
+                                  "8h 20m",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 12),
+                              Text(
+                                "Recommended Sleep (by Age):",
+                                style: TextStyle(
+                                  color: AppColors.blackColor,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              SizedBox(height: 6),
+                              Text(
+                                "• Children (6–13): 9–11 hours\n"
+                                "• Teens (14–17): 8–10 hours\n"
+                                "• Adults (18–64): 7–9 hours\n"
+                                "• Older Adults (65+): 7–8 hours",
+                                style: TextStyle(
+                                  color: AppColors.blackColor,
+                                  fontSize: 12,
+                                ),
+                              ),
                             ],
                           ),
                         ),
-
                         SizedBox(height: media.width * 0.05),
                         Container(
                           width: double.maxFinite,
@@ -577,7 +578,8 @@ Expanded(
                               SizedBox(height: media.width * 0.02),
                               Row(
                                 children: [
-                                  Icon(Icons.local_fire_department, 
+                                  Icon(
+                                    Icons.local_fire_department,
                                     color: AppColors.primaryColor1,
                                     size: 24,
                                   ),
@@ -586,10 +588,10 @@ Expanded(
                                     blendMode: BlendMode.srcIn,
                                     shaderCallback: (bounds) {
                                       return LinearGradient(
-                                        colors: AppColors.primaryG,
-                                        begin: Alignment.centerLeft,
-                                        end: Alignment.centerRight
-                                      ).createShader(bounds);
+                                              colors: AppColors.primaryG,
+                                              begin: Alignment.centerLeft,
+                                              end: Alignment.centerRight)
+                                          .createShader(bounds);
                                     },
                                     child: Text(
                                       "${_dailyTotals['caloriesTotal'] ?? '0'} kcal",
@@ -691,11 +693,11 @@ Expanded(
   }
 
   SideTitles get rightTitles => SideTitles(
-    getTitlesWidget: rightTitleWidgets,
-    showTitles: true,
-    interval: 20,
-    reservedSize: 40,
-  );
+        getTitlesWidget: rightTitleWidgets,
+        showTitles: true,
+        interval: 20,
+        reservedSize: 40,
+      );
 
   Widget rightTitleWidgets(double value, TitleMeta meta) {
     String text;
@@ -731,11 +733,11 @@ Expanded(
   }
 
   SideTitles get bottomTitles => SideTitles(
-    showTitles: true,
-    reservedSize: 32,
-    interval: 1,
-    getTitlesWidget: bottomTitleWidgets,
-  );
+        showTitles: true,
+        reservedSize: 32,
+        interval: 1,
+        getTitlesWidget: bottomTitleWidgets,
+      );
 
   Widget bottomTitleWidgets(double value, TitleMeta meta) {
     var style = TextStyle(
