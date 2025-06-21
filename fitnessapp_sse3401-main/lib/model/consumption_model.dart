@@ -4,9 +4,9 @@ class ConsumptionModel {
   String? id;
   String? userId;
   String type; // "water" or "food"
-  String title; // Added field
-  String amount; // Added field
-  String name; // Added field
+  String title;
+  String amount;
+  String name;
   double value;
   DateTime timestamp;
 

@@ -522,17 +522,19 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ).createShader(Rect.fromLTRB(
                                       0, 0, bounds.width, bounds.height));
                                 },
-                                child: Text(
-                                  "8h 20m",
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                                
+                              ),
+                               SizedBox(height: 6),
+                              Text(
+                                "Healthy Body and Sharp Mind.",
+                                style: TextStyle(
+                                  color: AppColors.blackColor,
+                                  fontSize: 12,
                                 ),
                               ),
                               SizedBox(height: 12),
                               Text(
-                                "Recommended Sleep (by Age):",
+                                "Recommended Sleep:",
                                 style: TextStyle(
                                   color: AppColors.blackColor,
                                   fontSize: 12,
@@ -541,10 +543,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               SizedBox(height: 6),
                               Text(
-                                "• Children (6–13): 9–11 hours\n"
-                                "• Teens (14–17): 8–10 hours\n"
-                                "• Adults (18–64): 7–9 hours\n"
-                                "• Older Adults (65+): 7–8 hours",
+                                "• Children: 9–11 hours\n"
+                                "• Teens: 8–10 hours\n"
+                                "• Adults: 7–9 hours\n"
+                                "• Older Adults: 7–8 hours",
                                 style: TextStyle(
                                   color: AppColors.blackColor,
                                   fontSize: 12,
