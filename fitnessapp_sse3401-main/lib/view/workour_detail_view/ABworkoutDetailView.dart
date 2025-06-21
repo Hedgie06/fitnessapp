@@ -88,32 +88,6 @@ class ABWorkoutDetailView extends StatelessWidget {
               ),
               SizedBox(height: media.width * 0.05),
 
-              // Displaying Larger Image and Description Below it
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 15.0),
-                child: Column(
-                  children: [
-                    Image.asset(
-                      "assets/images/Workout3.png",  // Replace with the relevant image asset
-                      width: media.width * 0.8,  // Increase the width to make the image larger
-                      height: media.width * 0.6,  // Adjust the height to maintain aspect ratio
-                      fit: BoxFit.cover,  // To ensure the image fits the container
-                    ),
-                    SizedBox(height: 10),
-                    Text(
-                      "This is an AB workout designed to strengthen your core and abdominal muscles. The exercises focus on different muscle groups within the core for a balanced and effective workout.",
-                      style: TextStyle(
-                        color: AppColors.blackColor,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    SizedBox(height: 20),
-                  ],
-                ),
-              ),
-
               // Displaying Exercises (Still Inside Cards)
               ListView.builder(
                 padding: EdgeInsets.zero,

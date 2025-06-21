@@ -1,4 +1,4 @@
-/*import 'package:fitnessapp/utils/app_colors.dart';
+import 'package:fitnessapp/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class IconTitleNextRow extends StatelessWidget {
@@ -71,4 +71,3 @@ class IconTitleNextRow extends StatelessWidget {
     );
   }
 }
-*/
