@@ -6,7 +6,7 @@ import 'package:fitnessapp/view/workout_schedule_view/workout_schedule_view.dart
 import 'package:fitnessapp/view/finish_workout/finish_workout_screen.dart';
 import 'package:fitnessapp/view/home/widgets/workout_row.dart';
 import 'package:fitnessapp/view/workout_session/workout_session_screen.dart';
-import 'package:fitnessapp/view/workour_detail_view/exercises_stpe_details.dart';
+import 'package:fitnessapp/view/workour_detail_view/ABworkoutDetailSteps.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -14,26 +14,22 @@ import 'package:intl/intl.dart';
 
 import '../../common_widgets/round_button.dart';
 
-
-class WorkoutDetailView extends StatefulWidget {
+class ABWorkoutDetailView extends StatefulWidget {
   final Map dObj;
-  const WorkoutDetailView({Key? key, required this.dObj}) : super(key: key);
+  const ABWorkoutDetailView({Key? key, required this.dObj}) : super(key: key);
 
   @override
-  State<WorkoutDetailView> createState() => _WorkoutDetailViewState();
+  State<ABWorkoutDetailView> createState() => _ABWorkoutDetailViewState();
 }
 
-class _WorkoutDetailViewState extends State<WorkoutDetailView> {
+class _ABWorkoutDetailViewState extends State<ABWorkoutDetailView> {
   List<Map<String, dynamic>> latestWorkouts = [];
   bool isLoading = true;  // You can remove this if not used elsewhere
 
   @override
   void initState() {
     super.initState();
-    // Remove _loadLatestWorkouts() call
   }
-
-  // Remove _loadLatestWorkouts() method
 
   String _getWorkoutImage(String workoutType) {
     switch (workoutType.toLowerCase()) {
@@ -58,8 +54,8 @@ class _WorkoutDetailViewState extends State<WorkoutDetailView> {
           "title": "Jumping Jack",
           "value": "12x"
         },
-        {"image": "assets/images/img_1.png", "title": "Skipping", "value": "15x"},
-        {"image": "assets/images/img_2.png", "title": "Squats", "value": "20x"},
+        {"image": "assets/images/img_1.png", "title": "Push-ups", "value": "15x"},
+        {"image": "assets/images/img_2.png", "title": "Bicep Curls", "value": "20x"},
         {
           "image": "assets/images/img_1.png",
           "title": "Arm Raises",
@@ -81,8 +77,8 @@ class _WorkoutDetailViewState extends State<WorkoutDetailView> {
           "title": "Jumping Jack",
           "value": "12x"
         },
-        {"image": "assets/images/img_1.png", "title": "Skipping", "value": "15x"},
-        {"image": "assets/images/img_2.png", "title": "Squats", "value": "20x"},
+        {"image": "assets/images/img_1.png", "title": "Push-ups", "value": "15x"},
+        {"image": "assets/images/img_2.png", "title": "Bicep Curls", "value": "20x"},
         {
           "image": "assets/images/img_1.png",
           "title": "Arm Raises",
@@ -101,8 +97,7 @@ class _WorkoutDetailViewState extends State<WorkoutDetailView> {
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
     return Container(
-      decoration:
-      BoxDecoration(gradient: LinearGradient(colors: AppColors.primaryG)),
+      decoration: BoxDecoration(gradient: LinearGradient(colors: AppColors.primaryG)),
       child: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return [
@@ -223,7 +218,7 @@ class _WorkoutDetailViewState extends State<WorkoutDetailView> {
                       SizedBox(
                         height: media.width * 0.05,
                       ),
-                     ListView.builder(
+                      ListView.builder(
                           padding: EdgeInsets.zero,
                           physics: const NeverScrollableScrollPhysics(),
                           shrinkWrap: true,
@@ -236,7 +231,7 @@ class _WorkoutDetailViewState extends State<WorkoutDetailView> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => ExercisesStepDetails(eObj: obj,),
+                                    builder: (context) => ABWorkoutDetailStep(eObj: obj,),
                                   ),
                                 );
                               },

@@ -5,39 +5,39 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 
-class ExercisesStepDetails extends StatefulWidget {
+class LowerBodyWorkoutDetailStep extends StatefulWidget {
   final Map eObj;
-  const ExercisesStepDetails({Key? key, required this.eObj}) : super(key: key);
+  const LowerBodyWorkoutDetailStep({Key? key, required this.eObj}) : super(key: key);
 
   @override
-  State<ExercisesStepDetails> createState() => _ExercisesStepDetailsState();
+  State<LowerBodyWorkoutDetailStep> createState() => _LowerBodyWorkoutDetailStepState();
 }
 
-class _ExercisesStepDetailsState extends State<ExercisesStepDetails> {
+class _LowerBodyWorkoutDetailStepState extends State<LowerBodyWorkoutDetailStep> {
   List stepArr = [
     {
       "no": "01",
-      "title": "Spread Your NUTS",
+      "title": "Spread Your Arms",
       "detail":
-      "To make the gestures feel more relaxed, stretch your arms as you start this movement. No bending of hands."
+          "To make the gestures feel more relaxed, stretch your arms as you start this movement. No bending of hands."
     },
     {
       "no": "02",
       "title": "Rest at The Toe",
       "detail":
-      "The basis of this movement is jumping. Now, what needs to be considered is that you have to use the tips of your feet"
+          "The basis of this movement is jumping. Now, what needs to be considered is that you have to use the tips of your feet"
     },
     {
       "no": "03",
       "title": "Adjust Foot Movement",
       "detail":
-      "Jumping Jack is not just an ordinary jump. But, you also have to pay close attention to leg movements."
+          "Jumping Jack is not just an ordinary jump. But, you also have to pay close attention to leg movements."
     },
     {
       "no": "04",
       "title": "Clapping Both Hands",
       "detail":
-      "This cannot be taken lightly. You see, without realizing it, the clapping of your hands helps you to keep your rhythm while doing the Jumping Jack"
+          "This cannot be taken lightly. You see, without realizing it, the clapping of your hands helps you to keep your rhythm while doing the Jumping Jack"
     },
   ];
 
@@ -175,7 +175,7 @@ class _ExercisesStepDetailsState extends State<ExercisesStepDetails> {
                   fontSize: 12,
                 ),
                 moreStyle:
-                const TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
+                    const TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
               ),
               const SizedBox(
                 height: 15,

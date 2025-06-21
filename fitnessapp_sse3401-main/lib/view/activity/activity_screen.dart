@@ -1,6 +1,7 @@
 import 'package:fitnessapp/utils/app_colors.dart';
 import 'package:fitnessapp/view/activity/widgets/upcoming_workout_row.dart';
 import 'package:fitnessapp/view/activity/widgets/what_train_row.dart';
+import 'package:fitnessapp/view/workour_detail_view/ABworkoutDetailView.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:fitnessapp/view/workout_schedule_view/workout_schedule_view.dart';  // Add this import
@@ -10,6 +11,8 @@ import 'package:intl/intl.dart';
 
 import '../../common_widgets/round_button.dart';
 import '../workour_detail_view/workour_detail_view.dart';
+import '../workour_detail_view/FullBodyWorkoutDetailView.dart';
+import '../workour_detail_view/LowerBodyDetailView.dart';
 
 class ActivityScreen extends StatefulWidget {
   const ActivityScreen({Key? key}) : super(key: key);
@@ -90,7 +93,7 @@ class _ActivityScreenState extends State<ActivityScreen> {
     },
     {
       "image": "assets/images/what_2.png",
-      "title": "Lowebody Workout",
+      "title": "Lower Body Workout",
       "exercises": "12 Exercises",
       "time": "40mins"
     },
@@ -290,19 +293,42 @@ class _ActivityScreenState extends State<ActivityScreen> {
                       ),
                     ],
                   ),
-                  ListView.builder(
-                      padding: EdgeInsets.zero,
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemCount: whatArr.length,
-                      itemBuilder: (context, index) {
-                        var wObj = whatArr[index] as Map? ?? {};
-                        return InkWell(
-                            onTap: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context) =>  WorkoutDetailView( dObj: wObj, ) ));
-                            },
-                            child:  WhatTrainRow(wObj: wObj) );
-                      }),
+                 ListView.builder(
+  padding: EdgeInsets.zero,
+  physics: const NeverScrollableScrollPhysics(),
+  shrinkWrap: true,
+  itemCount: whatArr.length,
+  itemBuilder: (context, index) {
+    var wObj = whatArr[index] as Map? ?? {};
+    String workoutType = wObj["title"] ?? "";
+return InkWell(
+  onTap: () {
+    if (workoutType.toLowerCase() == "upper body workout") {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => WorkoutDetailView(dObj: wObj)),
+      );
+    } else if (workoutType.toLowerCase() == "lower body workout") {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => LowerBodyWorkoutDetailView(dObj: wObj)), // Make sure this class exists
+      );
+    } else if (workoutType.toLowerCase() == "ab workout") {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ABWorkoutDetailView(dObj: wObj)), // Make sure this class exists
+      );
+    } else if (workoutType.toLowerCase() == "full body workout") {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => FullBodyWorkoutDetailView(dObj: wObj)), // Make sure this class exists
+      );
+    }
+  },
+  child: WhatTrainRow(wObj: wObj),
+);
+  },
+),
                   SizedBox(
                     height: media.width * 0.1,
                   ),
