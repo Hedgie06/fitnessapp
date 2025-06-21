@@ -1,6 +1,6 @@
 import 'package:fitnessapp/common_widgets/round_gradient_button.dart';
 import 'package:fitnessapp/utils/app_colors.dart';
-import 'package:fitnessapp/view/workour_detail_view/widgets/step_detail_row.dart';
+import 'package:fitnessapp/view/workour_detail_view/widgets/ABstep_detail_row.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
@@ -206,7 +206,7 @@ class _ABWorkoutDetailStepState extends State<ABWorkoutDetailStep> {
                 itemBuilder: ((context, index) {
                   var sObj = stepArr[index] as Map? ?? {};
 
-                  return StepDetailRow(
+                  return ABStepDetailRow(
                     sObj: sObj,
                     isLast: stepArr.last == sObj,
                   );

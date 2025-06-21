@@ -55,7 +55,7 @@ class _WorkoutDetailViewState extends State<WorkoutDetailView> {
         {"image": "assets/images/img_1.png", "title": "Warm Up", "value": "05:00"},
         {
           "image": "assets/images/img_2.png",
-          "title": "Jumping Jack",
+          "title": "Jumping PLUMP",
           "value": "12x"
         },
         {"image": "assets/images/img_1.png", "title": "Skipping", "value": "15x"},
@@ -78,7 +78,7 @@ class _WorkoutDetailViewState extends State<WorkoutDetailView> {
         {"image": "assets/images/img_1.png", "title": "Warm Up", "value": "05:00"},
         {
           "image": "assets/images/img_2.png",
-          "title": "Jumping Jack",
+          "title": "Jumping PLUMP",
           "value": "12x"
         },
         {"image": "assets/images/img_1.png", "title": "Skipping", "value": "15x"},
