@@ -120,14 +120,7 @@ class _ABWorkoutDetailStepState extends State<ABWorkoutDetailStep> {
                         color: AppColors.blackColor.withOpacity(0.2),
                         borderRadius: BorderRadius.circular(20)),
                   ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Image.asset(
-                      "assets/icons/play_icon.png",
-                      width: 30,
-                      height: 30,
-                    ),
-                  ),
+                 
                 ],
               ),
               const SizedBox(
