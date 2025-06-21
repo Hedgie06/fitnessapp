@@ -30,7 +30,7 @@ class WorkoutDetailView extends StatelessWidget {
     { "image": "assets/images/tricepDips.png", "title": "Tricep Dips (on chair)", "value": "10x" },
     { "image": "assets/images/wallPushUp.png", "title": "Wall Push-ups", "value": "20x" },
     { "image": "assets/images/rest.png", "title": "Rest and Hydrate", "value": "01:00" },
-    { "image": "assets/images/CoolingDown.png", "title": "Cool Down Stretch", "value": "02:00" }
+    { "image": "assets/images/coolingDown.png", "title": "Cool Down Stretch", "value": "02:00" }
   ]
 }
 
