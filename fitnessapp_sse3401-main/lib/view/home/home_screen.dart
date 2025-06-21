@@ -524,7 +524,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 },
                                 
                               ),
-                               SizedBox(height: 6),
+                                SizedBox(height: media.width * 0.05),
                               Text(
                                 "Healthy Body and Sharp Mind.",
                                 style: TextStyle(
@@ -532,7 +532,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   fontSize: 12,
                                 ),
                               ),
-                              SizedBox(height: 12),
+                               SizedBox(height: media.width * 0.05),
                               Text(
                                 "Recommended Sleep:",
                                 style: TextStyle(
@@ -541,7 +541,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              SizedBox(height: 6),
+                              SizedBox(height: media.width * 0.05),
                               Text(
                                 "• Children: 9–11 hours\n"
                                 "• Teens: 8–10 hours\n"
