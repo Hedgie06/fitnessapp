@@ -7,28 +7,33 @@ class WorkoutDetailView extends StatelessWidget {
   WorkoutDetailView({Key? key, required this.dObj}) : super(key: key);
 
   List exercisesArr = [
-    {
-      "name": "Set 1",
-      "set": [
-        {"image": "assets/images/img_1.png", "title": "Warm Up", "value": "05:00"},
-        {"image": "assets/images/img_2.png", "title": "Jumping Jack", "value": "12x"},
-        {"image": "assets/images/img_1.png", "title": "Push-ups", "value": "15x"},
-        {"image": "assets/images/img_2.png", "title": "Bicep Curls", "value": "20x"},
-        {"image": "assets/images/img_1.png", "title": "Arm Raises", "value": "00:53"},
-        {"image": "assets/images/img_2.png", "title": "Rest and Drink", "value": "02:00"},
-      ],
-    },
-    {
-      "name": "Set 2",
-      "set": [
-        {"image": "assets/images/img_1.png", "title": "Warm Up", "value": "05:00"},
-        {"image": "assets/images/img_2.png", "title": "Jumping Jack", "value": "12x"},
-        {"image": "assets/images/img_1.png", "title": "Push-ups", "value": "15x"},
-        {"image": "assets/images/img_2.png", "title": "Bicep Curls", "value": "20x"},
-        {"image": "assets/images/img_1.png", "title": "Arm Raises", "value": "00:53"},
-        {"image": "assets/images/img_2.png", "title": "Rest and Drink", "value": "02:00"},
-      ],
-    }
+   {
+  "name": "Upper Body – With Dumbbells",
+  "set": [
+    { "image": "assets/images/warmUp.png", "title": "Warm Up", "value": "05:00" },
+    { "image": "assets/images/shoulderPress.png", "title": "Dumbbell Shoulder Press", "value": "15x" },
+    { "image": "assets/images/bicepCurl.png", "title": "Dumbbell Bicep Curls", "value": "10x" },
+    { "image": "assets/images/tricepKick.png", "title": "Dumbbell Tricep Kickbacks", "value": "15x" },
+    { "image": "assets/images/lateralRaise.png", "title": "Dumbbell Lateral Raises", "value": "10x" },
+    { "image": "assets/images/chestPress.png", "title": "Dumbbell Chest Press", "value": "10x" },
+    { "image": "assets/images/rest.png", "title": "Rest and Hydrate", "value": "01:00" },
+    { "image": "assets/images/coolingDown.png", "title": "Cool Down Stretch", "value": "02:00" }
+  ]
+},
+
+   {
+  "name": "Upper Body – No Equipment",
+  "set": [
+    { "image": "assets/images/warmUp.png", "title": "Warm Up", "value": "05:00" },
+    { "image": "assets/images/pushUp.png", "title": "Push-ups", "value": "15x" },
+    { "image": "assets/images/shoulderTaps.png", "title": "Shoulder Taps", "value": "20x" },
+    { "image": "assets/images/tricepDips.png", "title": "Tricep Dips (on chair)", "value": "10x" },
+    { "image": "assets/images/wallPushUp.png", "title": "Wall Push-ups", "value": "20x" },
+    { "image": "assets/images/rest.png", "title": "Rest and Hydrate", "value": "01:00" },
+    { "image": "assets/images/CoolingDown.png", "title": "Cool Down Stretch", "value": "02:00" }
+  ]
+}
+
   ];
 
   @override

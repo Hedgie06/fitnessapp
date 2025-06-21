@@ -7,28 +7,28 @@ class LowerBodyWorkoutDetailView extends StatelessWidget {
   LowerBodyWorkoutDetailView({Key? key, required this.dObj}) : super(key: key);
 
   List exercisesArr = [
-    {
-      "name": "Set 1",
-      "set": [
-        {"image": "assets/images/img_1.png", "title": "Warm Up", "value": "05:00"},
-        {"image": "assets/images/img_2.png", "title": "Jumping Jack", "value": "12x"},
-        {"image": "assets/images/img_1.png", "title": "Push-ups", "value": "15x"},
-        {"image": "assets/images/img_2.png", "title": "Bicep Curls", "value": "20x"},
-        {"image": "assets/images/img_1.png", "title": "Arm Raises", "value": "00:53"},
-        {"image": "assets/images/img_2.png", "title": "Rest and Drink", "value": "02:00"},
-      ],
-    },
-    {
-      "name": "Set 2",
-      "set": [
-        {"image": "assets/images/img_1.png", "title": "Warm Up", "value": "05:00"},
-        {"image": "assets/images/img_2.png", "title": "Jumping Jack", "value": "12x"},
-        {"image": "assets/images/img_1.png", "title": "Push-ups", "value": "15x"},
-        {"image": "assets/images/img_2.png", "title": "Bicep Curls", "value": "20x"},
-        {"image": "assets/images/img_1.png", "title": "Arm Raises", "value": "00:53"},
-        {"image": "assets/images/img_2.png", "title": "Rest and Drink", "value": "02:00"},
-      ],
-    }
+  {
+  "name": "Lower Body – With Dumbbells",
+  "set": [
+    { "image": "assets/images/warmUp.png", "title": "Warm Up", "value": "05:00" },
+    { "image": "assets/images/dumbbellSquats.png", "title": "Dumbbell Squats", "value": "15x" },
+    { "image": "assets/images/dumbbellLunges.png", "title": "Dumbbell Lunges", "value": "10x (each leg)" },
+    { "image": "assets/images/dumbbellDeadlifts.png", "title": "Dumbbell Deadlifts", "value": "12x" },
+    { "image": "assets/images/rest.png", "title": "Rest and Hydrate", "value": "01:00" },
+    { "image": "assets/images/coolingDown.png", "title": "Cool Down Stretch", "value": "02:00" }
+  ]
+},
+   {
+  "name": "Lower Body – No Equipment",
+  "set": [
+    { "image": "assets/images/warmUp.png", "title": "Warm Up", "value": "05:00" },
+    { "image": "assets/images/dumbbellSquats.png", "title": "Bodyweight Squats", "value": "15x" },
+    { "image": "assets/images/wallSit.png", "title": "Wall Sit", "value": "00:45" },
+    { "image": "assets/images/calfRaise.png", "title": "Calf Raises", "value": "20x" },
+    { "image": "assets/images/rest.png", "title": "Rest and Hydrate", "value": "01:00" },
+    { "image": "assets/images/coolingDown.png", "title": "Cool Down Stretch", "value": "02:00" }
+  ]
+}
   ];
 
   @override
