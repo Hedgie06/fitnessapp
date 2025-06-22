@@ -541,17 +541,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              SizedBox(height: media.width * 0.05),
-                              Text(
-                                "• Children: 9–11 hours\n"
-                                "• Teens: 8–10 hours\n"
-                                "• Adults: 7–9 hours\n"
-                                "• Older Adults: 7–8 hours",
-                                style: TextStyle(
-                                  color: AppColors.blackColor,
-                                  fontSize: 12,
-                                ),
-                              ),
+                             SizedBox(height: media.width * 0.05),
+Text(
+  "• Children: 9–11 hours\n"
+  "• Teens: 8–10 hours\n"
+  "• Adults: 7–9 hours\n"
+  "• Older Adults: 7–8 hours",
+  style: TextStyle(
+    color: AppColors.blackColor,
+    fontSize: 12,
+  ),
+  softWrap: true, // Ensures lines wrap if needed
+  overflow: TextOverflow.visible, // Prevent clipping
+),
+
                             ],
                           ),
                         ),
