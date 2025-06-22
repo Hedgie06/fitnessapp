@@ -15,13 +15,17 @@ class WorkoutDetailView extends StatelessWidget {
     { "image": "assets/images/bicepCurl.png", "title": "Dumbbell Bicep Curls", "value": "10x" },
     { "image": "assets/images/tricepKick.png", "title": "Dumbbell Tricep Kickbacks", "value": "15x" },
     { "image": "assets/images/lateralRaise.png", "title": "Dumbbell Lateral Raises", "value": "10x" },
-    { "image": "assets/images/chestPress.png", "title": "Dumbbell Chest Press", "value": "10x" },
+    { "image": "assets/images/chestPress.png", "title": "Dumbbell Chest Press", "value": "12x" },
+    { "image": "assets/images/bentOverRow.png", "title": "Dumbbell Bent Over Rows", "value": "12x" },
+    { "image": "assets/images/lateralRaise.png", "title": "Dumbbell Front Raises", "value": "10x" },
+    { "image": "assets/images/uprightRow.png", "title": "Dumbbell Upright Rows", "value": "12x" },
     { "image": "assets/images/rest.png", "title": "Rest and Hydrate", "value": "01:00" },
     { "image": "assets/images/coolingDown.png", "title": "Cool Down Stretch", "value": "02:00" }
   ]
 },
 
-   {
+
+  {
   "name": "Upper Body – No Equipment",
   "set": [
     { "image": "assets/images/warmUp.png", "title": "Warm Up", "value": "05:00" },
@@ -29,10 +33,14 @@ class WorkoutDetailView extends StatelessWidget {
     { "image": "assets/images/shoulderTaps.png", "title": "Shoulder Taps", "value": "20x" },
     { "image": "assets/images/tricepDips.png", "title": "Tricep Dips (on chair)", "value": "10x" },
     { "image": "assets/images/wallPushUp.png", "title": "Wall Push-ups", "value": "20x" },
+    { "image": "assets/images/armCircle.png", "title": "Arm Circles", "value": "00:45" },
+    { "image": "assets/images/plank.png", "title": "Plank to Push-up", "value": "12x" },
+    { "image": "assets/images/pikePushUp.png", "title": "Pike Push-ups", "value": "10x" },
     { "image": "assets/images/rest.png", "title": "Rest and Hydrate", "value": "01:00" },
     { "image": "assets/images/coolingDown.png", "title": "Cool Down Stretch", "value": "02:00" }
   ]
 }
+
 
   ];
 

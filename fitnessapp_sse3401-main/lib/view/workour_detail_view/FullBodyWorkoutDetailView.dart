@@ -8,94 +8,24 @@ class FullBodyWorkoutDetailView extends StatelessWidget {
 
   List exercisesArr =[
   {
-    "name": "Upper Body – Strength",
-    "type": "Weighted",
-    "set": [
-      { "image": "assets/images/img_1.png", "title": "Warm Up", "value": "05:00" },
-      { "image": "assets/images/img_2.png", "title": "Dumbbell Shoulder Press", "value": "15x" },
-      { "image": "assets/images/img_1.png", "title": "Dumbbell Bicep Curls", "value": "10x" },
-      { "image": "assets/images/img_2.png", "title": "Dumbbell Tricep Kickbacks", "value": "15x" },
-      { "image": "assets/images/img_1.png", "title": "Dumbbell Lateral Raises", "value": "10x" },
-      { "image": "assets/images/img_2.png", "title": "Dumbbell Chest Press", "value": "10x" },
-      { "image": "assets/images/img_1.png", "title": "Rest and Hydrate", "value": "01:00" },
-      { "image": "assets/images/img_2.png", "title": "Cool Down Stretch", "value": "02:00" }
-    ]
-  },
-  {
-    "name": "Upper Body – Bodyweight",
-    "type": "Equipment-Free",
-    "set": [
-      { "image": "assets/images/img_1.png", "title": "Warm Up", "value": "05:00" },
-      { "image": "assets/images/img_2.png", "title": "Arm Circles", "value": "15x" },
-      { "image": "assets/images/img_1.png", "title": "Push-ups", "value": "15x" },
-      { "image": "assets/images/img_2.png", "title": "Shoulder Taps", "value": "20x" },
-      { "image": "assets/images/img_1.png", "title": "Arm Raises", "value": "00:45" },
-      { "image": "assets/images/img_2.png", "title": "Tricep Dips (on chair)", "value": "10x" },
-      { "image": "assets/images/img_1.png", "title": "Wall Push-ups", "value": "20x" },
-      { "image": "assets/images/img_2.png", "title": "Rest and Hydrate", "value": "01:00" },
-      { "image": "assets/images/img_1.png", "title": "Cool Down Stretch", "value": "02:00" }
-    ]
-  },
-  {
-    "name": "Lower Body – Strength",
-    "type": "Weighted",
-    "set": [
-      { "image": "assets/images/img_1.png", "title": "Warm Up", "value": "05:00" },
-      { "image": "assets/images/img_2.png", "title": "Dumbbell Squats", "value": "15x" },
-      { "image": "assets/images/img_1.png", "title": "Dumbbell Lunges", "value": "10x (each leg)" },
-      { "image": "assets/images/img_2.png", "title": "Dumbbell Deadlifts", "value": "12x" },
-      { "image": "assets/images/img_1.png", "title": "Dumbbell Calf Raises", "value": "20x" },
-      { "image": "assets/images/img_2.png", "title": "Dumbbell Glute Bridges", "value": "15x" },
-      { "image": "assets/images/img_1.png", "title": "Rest and Hydrate", "value": "01:00" },
-      { "image": "assets/images/img_2.png", "title": "Cool Down Stretch", "value": "02:00" }
-    ]
-  },
-  {
-    "name": "Lower Body – Bodyweight",
-    "type": "Equipment-Free",
-    "set": [
-      { "image": "assets/images/img_1.png", "title": "Warm Up", "value": "05:00" },
-      { "image": "assets/images/img_2.png", "title": "Bodyweight Squats", "value": "15x" },
-      { "image": "assets/images/img_1.png", "title": "Lunges", "value": "10x (each leg)" },
-      { "image": "assets/images/img_2.png", "title": "Wall Sit", "value": "00:45" },
-      { "image": "assets/images/img_1.png", "title": "Glute Bridges", "value": "15x" },
-      { "image": "assets/images/img_2.png", "title": "Calf Raises", "value": "20x" },
-      { "image": "assets/images/img_1.png", "title": "Rest and Hydrate", "value": "01:00" },
-      { "image": "assets/images/img_2.png", "title": "Cool Down Stretch", "value": "02:00" }
-    ]
-  },
-  {
-    "name": "Full Body – Strength Circuit",
-    "type": "Weighted",
-    "set": [
-      { "image": "assets/images/img_1.png", "title": "Warm Up", "value": "05:00" },
-      { "image": "assets/images/img_2.png", "title": "Dumbbell Squats", "value": "15x" },
-      { "image": "assets/images/img_1.png", "title": "Dumbbell Shoulder Press", "value": "12x" },
-      { "image": "assets/images/img_2.png", "title": "Dumbbell Rows", "value": "12x" },
-      { "image": "assets/images/img_1.png", "title": "Dumbbell Lunges", "value": "10x (each leg)" },
-      { "image": "assets/images/img_2.png", "title": "Dumbbell Chest Press", "value": "12x" },
-      { "image": "assets/images/img_1.png", "title": "Dumbbell Deadlifts", "value": "10x" },
-      { "image": "assets/images/img_2.png", "title": "Russian Twists (with dumbbell)", "value": "20x" },
-      { "image": "assets/images/img_1.png", "title": "Rest and Hydrate", "value": "01:00" },
-      { "image": "assets/images/img_2.png", "title": "Cool Down Stretch", "value": "02:00" }
-    ]
-  },
-  {
-    "name": "Full Body – Anywhere",
-    "type": "Equipment-Free",
-    "set": [
-      { "image": "assets/images/img_1.png", "title": "Warm Up", "value": "05:00" },
-      { "image": "assets/images/img_2.png", "title": "Jumping Jacks", "value": "30x" },
-      { "image": "assets/images/img_1.png", "title": "Push-ups", "value": "15x" },
-      { "image": "assets/images/img_2.png", "title": "Bodyweight Squats", "value": "20x" },
-      { "image": "assets/images/img_1.png", "title": "Plank", "value": "00:45" },
-      { "image": "assets/images/img_2.png", "title": "Lunges", "value": "10x (each leg)" },
-      { "image": "assets/images/img_1.png", "title": "Mountain Climbers", "value": "20x" },
-      { "image": "assets/images/img_2.png", "title": "High Knees", "value": "00:30" },
-      { "image": "assets/images/img_1.png", "title": "Rest and Hydrate", "value": "01:00" },
-      { "image": "assets/images/img_2.png", "title": "Cool Down Stretch", "value": "02:00" }
-    ]
-  }
+  "name": "Full Body – No Equipment",
+  "type": "Equipment-Free",
+"set": [
+  { "image": "assets/images/warmUp.png", "title": "Warm Up", "value": "05:00" },
+  { "image": "assets/images/jumpingJack.png", "title": "Jumping Jacks", "value": "30x" },
+  { "image": "assets/images/pushUp.png", "title": "Push-ups", "value": "15x" },
+  { "image": "assets/images/dumbbellSquats.png", "title": "Bodyweight Squats", "value": "20x" },
+  { "image": "assets/images/plank.png", "title": "Plank", "value": "00:45" },
+  { "image": "assets/images/dumbbellLunges.png", "title": "Lunges", "value": "10x (each leg)" },
+  { "image": "assets/images/mountainClimbers.png", "title": "Mountain Climbers", "value": "20x" },
+  { "image": "assets/images/jumpingJack.png", "title": "Burpees", "value": "12x" },
+  { "image": "assets/images/calfRaise.png", "title": "High Knees", "value": "00:30" },
+  { "image": "assets/images/rest.png", "title": "Rest and Hydrate", "value": "01:00" },
+  { "image": "assets/images/coolingDown.png", "title": "Cool Down Stretch", "value": "02:00" }
+]
+
+}
+
 ];
 
 

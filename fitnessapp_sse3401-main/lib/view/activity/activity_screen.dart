@@ -89,19 +89,19 @@ class _ActivityScreenState extends State<ActivityScreen> {
       "image": "assets/images/what_1.png",
       "title": "Upper Body Workout",
       "exercises": "10 Exercises",
-      "time": "50mins"
+      "time": "40mins"
     },
     {
       "image": "assets/images/what_2.png",
       "title": "Lower Body Workout",
-      "exercises": "12 Exercises",
-      "time": "40mins"
+      "exercises": "5 Exercises",
+      "time": "30mins"
     },
     {
       "image": "assets/images/what_3.png",
       "title": "AB Workout",
-      "exercises": "14 Exercises",
-      "time": "20mins"
+      "exercises": "8 Exercises",
+      "time": "30mins"
     },
     {
       "image": "assets/images/what_1.png",
@@ -115,18 +115,18 @@ class _ActivityScreenState extends State<ActivityScreen> {
     {
       "title": "Upper Body",
       "exercises": "10 Exercises",
-      "time": "50 Minutes",
+      "time": "40 Minutes",
       "image": "assets/images/Workout1.png",
     },
     {
       "title": "Lower Body",
-      "exercises": "10 Exercises",
-      "time": "40 Minutes",
+      "exercises": "5 Exercises",
+      "time": "30 Minutes",
       "image": "assets/images/Workout2.png",
     },
     {
       "title": "Ab Workout",
-      "exercises": "10 Exercises",
+      "exercises": "8 Exercises",
       "time": "30 Minutes",
       "image": "assets/images/Workout3.png",
     },
