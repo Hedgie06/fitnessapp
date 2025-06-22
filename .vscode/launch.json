@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "fitnessapp_sse3401-main",
+            "cwd": "fitnessapp_sse3401-main",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "fitnessapp_sse3401-main (profile mode)",
+            "cwd": "fitnessapp_sse3401-main",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "fitnessapp_sse3401-main (release mode)",
+            "cwd": "fitnessapp_sse3401-main",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
