@@ -1,12 +1,7 @@
-import 'package:dotted_dashed_line/dotted_dashed_line.dart';
 import 'package:fitnessapp/utils/app_colors.dart';
 import 'package:fitnessapp/view/activity_tracker/activity_tracker_screen.dart';
-import 'package:fitnessapp/view/finish_workout/finish_workout_screen.dart';
-import 'package:fitnessapp/view/home/widgets/workout_row.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:simple_animation_progress_bar/simple_animation_progress_bar.dart';
-import 'package:simple_circular_progress_bar/simple_circular_progress_bar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitnessapp/view/bmi/bmi_detail_screen.dart'; // Add this import
@@ -14,10 +9,8 @@ import '../../controller/fitness_controller.dart';
 import 'package:fitnessapp/controller/consumption_controller.dart'; // Add this import
 
 import '../../common_widgets/round_button.dart';
-import '../../common_widgets/round_gradient_button.dart';
 import '../notification/notification_screen.dart';
-import '../bmi/bmi_detail_screen.dart';
-import '../workout/workout_list_screen.dart';
+
 
 class HomeScreen extends StatefulWidget {
   static String routeName = "/HomeScreen";
@@ -199,44 +192,9 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
-  String _getWorkoutImage(String workoutType) {
-    switch (workoutType.toLowerCase()) {
-      case 'upper body workout':
-        return "assets/images/Workout1.png";
-      case 'lower body workout':
-        return "assets/images/Workout2.png";
-      case 'ab workout':
-        return "assets/images/Workout3.png";
-      default:
-        return "assets/images/Workout1.png";
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
-
-    final lineBarsData = [
-      LineChartBarData(
-        showingIndicators: showingTooltipOnSpots,
-        spots: allSpots,
-        isCurved: false,
-        barWidth: 3,
-        belowBarData: BarAreaData(
-          show: true,
-          gradient: LinearGradient(colors: [
-            AppColors.primaryColor2.withOpacity(0.4),
-            AppColors.primaryColor1.withOpacity(0.1),
-          ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
-        ),
-        dotData: FlDotData(show: false),
-        gradient: LinearGradient(
-          colors: AppColors.primaryG,
-        ),
-      ),
-    ];
-
-    final tooltipsOnBar = lineBarsData[0];
 
     return Scaffold(
       backgroundColor: AppColors.whiteColor,

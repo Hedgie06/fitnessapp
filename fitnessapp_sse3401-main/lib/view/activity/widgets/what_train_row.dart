@@ -1,7 +1,7 @@
 import 'package:fitnessapp/utils/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 
-import '../../../common_widgets/round_button.dart';
+
 
 class WhatTrainRow extends StatelessWidget {
   final Map wObj;

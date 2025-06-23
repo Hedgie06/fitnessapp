@@ -1,7 +1,7 @@
 import 'package:fitnessapp/utils/app_colors.dart';
 import 'package:fitnessapp/view/notification/widgets/notification_row.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+
 
 class NotificationScreen extends StatefulWidget {
   static String routeName = "/NotificationScreen";

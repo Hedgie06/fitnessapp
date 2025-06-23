@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:fitnessapp/utils/app_colors.dart';
 import 'package:fitnessapp/view/activity/activity_screen.dart';
 import 'package:fitnessapp/view/bmi/bmi_detail_screen.dart';
