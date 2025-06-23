@@ -8,7 +8,6 @@ import 'package:fitnessapp/view/workout_schedule_view/workout_schedule_view.dart
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:intl/intl.dart';
-
 import '../../common_widgets/round_button.dart';
 import '../workour_detail_view/workour_detail_view.dart';
 import '../workour_detail_view/FullBodyWorkoutDetailView.dart';

@@ -4,7 +4,7 @@ import 'package:fitnessapp/utils/app_colors.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../../common_widgets/round_gradient_button.dart';
-import '../../common_widgets/round_textfield.dart';
+
 
 class EditProfileScreen extends StatefulWidget {
   final Map<String, dynamic> userData;

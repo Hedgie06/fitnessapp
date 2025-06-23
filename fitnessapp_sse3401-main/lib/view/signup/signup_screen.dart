@@ -8,7 +8,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import '../../common_widgets/round_gradient_button.dart';
 import '../../common_widgets/round_textfield.dart';
 import '../profile/complete_profile_screen.dart';
-import '../../widgets/password_strength_widget.dart';  // Add this import
+
 
 class SignupScreen extends StatefulWidget {
   static String routeName = "/SignupScreen";
