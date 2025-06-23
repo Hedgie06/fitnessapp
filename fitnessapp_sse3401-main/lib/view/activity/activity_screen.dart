@@ -138,10 +138,6 @@ class _ActivityScreenState extends State<ActivityScreen> {
     }
   ];
 
-  void _handleSeeMore() {
-    // You can navigate to a workout list screen or show more workouts
-    Navigator.pushNamed(context, '/WorkoutListScreen');  // Implement this route
-  }
 
   @override
   Widget build(BuildContext context) {

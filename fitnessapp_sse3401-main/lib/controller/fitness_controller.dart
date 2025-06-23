@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart' show kIsWeb; // Add this import
 import '../model/workout_schedule_model.dart';
-import '../model/user_model.dart';
 import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
 import '../model/user_photo_model.dart';
@@ -339,18 +338,6 @@ class FitnessController {
     }
   }
 
-  // Helper method to update workout statistics in user document
-  Future<void> _updateUserWorkoutStats(Map<String, dynamic> statsUpdate) async {
-    final user = _auth.currentUser;
-    if (user != null) {
-      final userRef = _firestore.collection('users').doc(user.uid);
-      
-      await userRef.set({
-        'workoutStats': statsUpdate,
-        'lastUpdated': FieldValue.serverTimestamp(),
-      }, SetOptions(merge: true));
-    }
-  }
 
   // Method to get all workouts for a user
   Future<List<Map<String, dynamic>>> getAllUserWorkouts() async {

@@ -1,5 +1,4 @@
 import 'package:fitnessapp/common_widgets/round_button.dart';
-import 'package:fitnessapp/common_widgets/round_gradient_button.dart';
 import 'package:fitnessapp/utils/app_colors.dart';
 import 'package:fitnessapp/view/camera/photo_compare_screen.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +6,6 @@ import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:universal_html/html.dart' as html;  // Add this for web support
-import 'package:cached_network_image/cached_network_image.dart';
 import '../../controller/fitness_controller.dart';
 import 'widgets/photo_details_dialog.dart';
 
