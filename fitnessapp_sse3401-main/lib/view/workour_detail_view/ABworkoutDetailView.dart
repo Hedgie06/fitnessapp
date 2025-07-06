@@ -11,15 +11,15 @@ class ABWorkoutDetailView extends StatelessWidget {
   "name": "Abs – Core Focus",
   "type": "Equipment-Free",
   "set": [
-    { "image": "assets/images/warmUp.png", "title": "Warm Up", "value": "03:00" },
-    { "image": "assets/images/crunches.png", "title": "Crunches", "value": "20x" },
-    { "image": "assets/images/legRaises.png", "title": "Leg Raises", "value": "15x" },
-    { "image": "assets/images/bicycleCrunches.png", "title": "Bicycle Crunches", "value": "20x" },
-    { "image": "assets/images/plank.png", "title": "Plank", "value": "00:45" },
-    { "image": "assets/images/russianTwist.png", "title": "Russian Twists", "value": "30x" },
-    { "image": "assets/images/mountainClimbers.png", "title": "Mountain Climbers", "value": "30x" },
-    { "image": "assets/images/rest.png", "title": "Rest and Hydrate", "value": "01:00" },
-    { "image": "assets/images/coolingDown.png", "title": "Cool Down Stretch", "value": "02:00" }
+    { "image": "assets/images/img_1.png", "title": "Warm Up", "value": "03:00" },
+    { "image": "assets/images/img_1.png", "title": "Crunches", "value": "20x" },
+    { "image": "assets/images/img_1.png", "title": "Leg Raises", "value": "15x" },
+    { "image": "assets/images/img_1.png", "title": "Bicycle Crunches", "value": "20x" },
+    { "image": "assets/images/img_1.png", "title": "Plank", "value": "00:45" },
+    { "image": "assets/images/img_1.png", "title": "Russian Twists", "value": "30x" },
+    { "image": "assets/images/img_1.png", "title": "Mountain Climbers", "value": "30x" },
+    { "image": "assets/images/img_1.png", "title": "Rest and Hydrate", "value": "01:00" },
+    { "image": "assets/images/img_1.png", "title": "Cool Down Stretch", "value": "02:00" }
   ]
 }
 

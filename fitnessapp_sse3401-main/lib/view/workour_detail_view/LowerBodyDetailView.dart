@@ -10,23 +10,23 @@ class LowerBodyWorkoutDetailView extends StatelessWidget {
   {
   "name": "Lower Body – With Dumbbells",
   "set": [
-    { "image": "assets/images/warmUp.png", "title": "Warm Up", "value": "05:00" },
-    { "image": "assets/images/dumbbellSquats.png", "title": "Dumbbell Squats", "value": "15x" },
-    { "image": "assets/images/dumbbellLunges.png", "title": "Dumbbell Lunges", "value": "10x (each leg)" },
-    { "image": "assets/images/dumbbellDeadlifts.png", "title": "Dumbbell Deadlifts", "value": "12x" },
-    { "image": "assets/images/rest.png", "title": "Rest and Hydrate", "value": "01:00" },
-    { "image": "assets/images/coolingDown.png", "title": "Cool Down Stretch", "value": "02:00" }
+    { "image": "assets/images/img_1.png", "title": "Warm Up", "value": "05:00" },
+    { "image": "assets/images/img_1.png", "title": "Dumbbell Squats", "value": "15x" },
+    { "image": "assets/images/img_1.png", "title": "Dumbbell Lunges", "value": "10x (each leg)" },
+    { "image": "assets/images/img_1.png", "title": "Dumbbell Deadlifts", "value": "12x" },
+    { "image": "assets/images/img_1.png", "title": "Rest and Hydrate", "value": "01:00" },
+    { "image": "assets/images/img_1.png", "title": "Cool Down Stretch", "value": "02:00" }
   ]
 },
    {
   "name": "Lower Body – No Equipment",
   "set": [
-    { "image": "assets/images/warmUp.png", "title": "Warm Up", "value": "05:00" },
-    { "image": "assets/images/dumbbellSquats.png", "title": "Bodyweight Squats", "value": "15x" },
-    { "image": "assets/images/wallSit.png", "title": "Wall Sit", "value": "00:45" },
-    { "image": "assets/images/calfRaise.png", "title": "Calf Raises", "value": "20x" },
-    { "image": "assets/images/rest.png", "title": "Rest and Hydrate", "value": "01:00" },
-    { "image": "assets/images/coolingDown.png", "title": "Cool Down Stretch", "value": "02:00" }
+    { "image": "assets/images/img_1.png", "title": "Warm Up", "value": "05:00" },
+    { "image": "assets/images/img_1.png", "title": "Bodyweight Squats", "value": "15x" },
+    { "image": "assets/images/img_1.png", "title": "Wall Sit", "value": "00:45" },
+    { "image": "assets/images/img_1.png", "title": "Calf Raises", "value": "20x" },
+    { "image": "assets/images/img_1.png", "title": "Rest and Hydrate", "value": "01:00" },
+    { "image": "assets/images/img_1.png", "title": "Cool Down Stretch", "value": "02:00" }
   ]
 }
   ];

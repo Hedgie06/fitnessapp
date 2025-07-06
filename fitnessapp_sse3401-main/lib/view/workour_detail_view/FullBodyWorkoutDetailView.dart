@@ -11,17 +11,17 @@ class FullBodyWorkoutDetailView extends StatelessWidget {
   "name": "Full Body – No Equipment",
   "type": "Equipment-Free",
 "set": [
-  { "image": "assets/images/warmUp.png", "title": "Warm Up", "value": "05:00" },
-  { "image": "assets/images/jumpingJack.png", "title": "Jumping Jacks", "value": "30x" },
-  { "image": "assets/images/pushUp.png", "title": "Push-ups", "value": "15x" },
-  { "image": "assets/images/dumbbellSquats.png", "title": "Bodyweight Squats", "value": "20x" },
-  { "image": "assets/images/plank.png", "title": "Plank", "value": "00:45" },
-  { "image": "assets/images/dumbbellLunges.png", "title": "Lunges", "value": "10x (each leg)" },
-  { "image": "assets/images/mountainClimbers.png", "title": "Mountain Climbers", "value": "20x" },
-  { "image": "assets/images/jumpingJack.png", "title": "Burpees", "value": "12x" },
-  { "image": "assets/images/calfRaise.png", "title": "High Knees", "value": "00:30" },
-  { "image": "assets/images/rest.png", "title": "Rest and Hydrate", "value": "01:00" },
-  { "image": "assets/images/coolingDown.png", "title": "Cool Down Stretch", "value": "02:00" }
+  { "image": "assets/images/img_1.png", "title": "Warm Up", "value": "05:00" },
+  { "image": "assets/images/img_1.png", "title": "Jumping Jacks", "value": "30x" },
+  { "image": "assets/images/img_1.png", "title": "Push-ups", "value": "15x" },
+  { "image": "assets/images/img_1.png", "title": "Bodyweight Squats", "value": "20x" },
+  { "image": "assets/images/img_1.png", "title": "Plank", "value": "00:45" },
+  { "image": "assets/images/img_1.png", "title": "Lunges", "value": "10x (each leg)" },
+  { "image": "assets/images/img_1.png", "title": "Mountain Climbers", "value": "20x" },
+  { "image": "assets/images/img_1.png", "title": "Burpees", "value": "12x" },
+  { "image": "assets/images/img_1.png", "title": "High Knees", "value": "00:30" },
+  { "image": "assets/images/img_1.png", "title": "Rest and Hydrate", "value": "01:00" },
+  { "image": "assets/images/img_1.png", "title": "Cool Down Stretch", "value": "02:00" }
 ]
 
 }
