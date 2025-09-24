@@ -18,10 +18,10 @@ dependencies:
   google_sign_in: ^6.2.2
   firebase_storage: ^12.4.0
   image_picker: ^1.0.7
-  intl: ^0.19.0  # Updated from 0.18.0 to 0.19.0
+  intl: ^0.20.2  # Updated from 0.18.0 to 0.19.0
   shared_preferences: ^2.3.5
   universal_html: ^2.2.4
-  syncfusion_flutter_charts: ^24.1.41
+  syncfusion_flutter_charts: 30.2.7
   cupertino_icons: ^1.0.2
   carousel_slider: ^4.2.1
   fl_chart: ^0.65.0
@@ -36,7 +36,7 @@ dependencies:
   cached_network_image: ^3.4.1
   dart_openai: ^4.0.0  # Add this
   connectivity_plus: ^4.0.2
-  permission_handler: ^10.2.0
+  permission_handler: ^11.3.1
 
 flutter_native_splash:
   color: "#ffffff"
